@@ -1,0 +1,42 @@
+{
+  "dependencies": {
+    "@supabase/supabase-js": "^2.105.4",
+    "electron-updater": "^6.8.3",
+    "node-machine-id": "^1.1.12"
+  },
+  "name": "chechenia-app",
+  "version": "2.1.2",
+  "description": "",
+  "main": "main.js",
+  "devDependencies": {
+    "electron": "^42.0.0",
+    "electron-builder": "^26.8.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "build": "electron-builder --win"
+  },
+  "build": {
+    "appId": "com.frenyer.chechenia",
+    "productName": "Cifrado Chechenia",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "build/new.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

@@ -1,0 +1,101 @@
+#authOverlay {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background-color: #121410; /* Fondo más oscuro que la app normal */
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .auth-panel {
+            background-color: #1a1e18;
+            border: 2px solid #3e4739;
+            padding: 40px;
+            border-radius: 8px;
+            width: 450px;
+            box-shadow: 0 0 30px rgba(107, 142, 35, 0.15);
+            text-align: center;
+            position: relative;
+        }
+
+        /* Efecto de escaneo CRT en el panel */
+        .auth-panel::after {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 2;
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+        }
+
+        .auth-title {
+            color: #d1b038;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .auth-subtitle {
+            color: #6b8e23;
+            font-size: 0.8rem;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .auth-input {
+            width: 100%;
+            background-color: #0b0d0a;
+            border: 1px dashed #6b8e23;
+            color: #d1b038;
+            padding: 15px;
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            outline: none;
+            position: relative;
+            z-index: 3;
+        }
+
+        .auth-input:focus {
+            border-color: #d1b038;
+            box-shadow: inset 0 0 10px rgba(209, 176, 56, 0.2);
+        }
+
+        .auth-btn {
+            width: 100%;
+            background-color: #3e4739;
+            color: #fff;
+            border: none;
+            padding: 15px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: 0.2s;
+            position: relative;
+            z-index: 3;
+        }
+
+        .auth-btn:hover { background-color: #55711b; }
+        
+        .auth-btn:disabled {
+            background-color: #2c312a;
+            color: #555;
+            cursor: not-allowed;
+        }
+
+        .auth-feedback {
+            margin-top: 15px;
+            font-size: 0.85rem;
+            height: 20px;
+            font-weight: bold;
+        }

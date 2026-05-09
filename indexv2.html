@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIFRADO TÁCTICO MILITAR</title>
+     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/authentication.css">
+</head>
+<body>
+
+    <div id="authOverlay">
+        <div class="auth-panel">
+            <div class="auth-title">CIFRADO CHECHENIA</div>
+            <div class="auth-subtitle">INGRESE CLAVE DEL PRODUCTO</div>
+            
+            <input type="text" id="inputLicencia" class="auth-input" placeholder="XXX-XXX-XXX-XXX-XXX" autocomplete="off" spellcheck="false" maxlength="15">
+            
+            <button id="btnVerificar" class="auth-btn">INGRESAR</button>
+        
+            <div style="margin-top: 10px;">¿Desea adquirir una licencia? <br> Contactenos a traves del +58 4147219426</div>
+            <div id="txtFeedback" class="auth-feedback" style="color: transparent;">-</div>
+        </div>
+    </div>
+
+
+
+    <div class="container" id="app-content">
+        <h1>Método Chechenia</h1>
+
+        <div class="controls">
+            <label class="radio-label">
+                <input type="radio" name="operation" value="cifrar" checked>
+                Cifrar
+            </label>
+            <label class="radio-label">
+                <input type="radio" name="operation" value="descifrar">
+                Descifrar
+            </label>
+        </div>
+
+    <div class="textarea-wrapper">
+        <textarea id="inputText" placeholder="Introduce el mensaje aquí..."></textarea>
+        <button id="btnPegar" onclick="pegarMensaje()" class="btn-flotante" title="Pegar desde el portapapeles">
+            📥
+        </button>
+    </div>
+        
+        <button id="btnProcesar" onclick="ejecutarAlgoritmo()">Procesar</button>
+
+      <div class="output-group">
+        <label for="outputText">Salida del Sistema</label>
+        
+        <div class="textarea-wrapper">
+            <textarea id="outputText" readonly placeholder="Esperando datos de entrada..."></textarea>
+            
+            <button id="btnCopiar" onclick="copiarMensaje()" class="btn-flotante" title="Copiar mensaje">
+                📋
+            </button>
+        </div>
+        
+        <div id="notaIA"></div>
+    </div>
+        <!-- Terminal de Aprendizaje Continuo -->
+        <div id="panelAprendizaje" style="display:none; margin-top: 20px; padding-top: 15px; border-top: 1px dashed var(--border-color);">
+            <label style="display: block; margin-bottom: 8px; font-size: 0.8rem; color: var(--alert-color);">
+                ¿Palabra mal interpretada? AGREGA AL DICCIONARIO
+            </label>
+            <div style="display: flex; gap: 10px;">
+                <input type="text" id="inputNuevaPalabra" placeholder="Ej: EMBOSCADA" 
+                       style="flex: 1; background-color: #0b0d0a; border: 1px solid var(--border-color); color: var(--text-main); padding: 10px; border-radius: 4px; font-family: monospace;">
+                <button onclick="inyectarPalabra()" style="width: auto; padding: 10px 15px; font-size: 0.9rem; background-color: #3e4739;">
+                    AÑADIR
+                </button>
+            </div>
+            <span id="estadoDiccionario" style="font-size: 0.8rem; color: var(--accent-color); margin-top: 5px; display: block;"></span>
+        </div>
+    </div>
+
+    <div id="blockedOverlay" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: #1a1a1a; color: white; z-index: 9999; flex-direction: column; justify-content: center; align-items: center; text-align: center; font-family: sans-serif;">
+    <h1 style="color: #ff4444; font-size: 2.5rem; margin-bottom: 10px;">Acceso Denegado</h1>
+    <p style="font-size: 1.2rem; max-width: 80%;">Este dispositivo se encuentra temporal o definitivamente bloqueado.</p>
+    <p style="font-size: 1rem; max-width: 80%;">¿Hemos cometido un error? Ponte en contacto a través de +58 4147219426</p>
+    </div>
+    
+    <script src="js/connect.js"></script>
+    <script src="js/dictionary.js"></script>
+    <script src="js/criptografy.js"></script>
+
+</body>
+</html>
