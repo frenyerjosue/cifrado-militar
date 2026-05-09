@@ -5,7 +5,7 @@
     "node-machine-id": "^1.1.12"
   },
   "name": "chechenia-app",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "",
   "main": "main.js",
   "devDependencies": {
