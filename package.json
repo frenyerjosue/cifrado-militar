@@ -33,7 +33,12 @@
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true
-    }
+    },
+    "publish": [{
+      "provider": "github",
+      "owner": "frenyerjosue",
+      "repo": "cifrado-militar"
+    }]
   },
   "keywords": [],
   "author": "",

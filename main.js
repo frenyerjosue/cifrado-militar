@@ -1,7 +1,7 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const { machineIdSync } = require('node-machine-id');
-
+const { autoUpdater } = require('electron-updater');
 const { supabase } = require('./js/database.js');
 
 function createWindow () {
@@ -40,7 +40,18 @@ function createWindow () {
         // Opcional: Castigar al usuario cerrando la app si intenta hackearla
         // app.quit(); 
     });
+
+    autoUpdater.checkForUpdatesAndNotify();
 }
+
+autoUpdater.on('update-available', () => {
+    console.log('¡Actualización detectada! Descargando...');
+});
+
+autoUpdater.on('update-downloaded', () => {
+    console.log('Descarga terminada. Se instalará al cerrar la app.');
+    // También podrías enviar un mensaje al frontend para mostrarle un botón de "Reiniciar ahora"
+});
 
 // --- PROTOCOLO DE INTERCOMUNICACIÓN (BACKEND) ---
 ipcMain.handle('iniciar-verificacion', async (event, claveIngresada) => {
